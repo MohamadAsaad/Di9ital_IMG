@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# خريطة الموقع (إن وُجدت)
+Sitemap: https://www.img.di9ital.site/sitemap.xml
+
+# تعطيل فهرسة بعض المجلدات غير الضرورية
+Disallow: /css/
+Disallow: /js/
+
+# السماح بفهرسة الصور
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
