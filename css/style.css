@@ -203,10 +203,125 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
     width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    backdrop-filter: blur(10px);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: var(--darker);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.feature i {
+    font-size: 1.1rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.step:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.step h3 {
+    color: var(--darker);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.step p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* Upload Section */
@@ -410,12 +525,12 @@ body {
 
 .tooltip-text {
     visibility: hidden;
-    width: 200px;
+    width: 250px;
     background: var(--darker);
     color: white;
     text-align: center;
     border-radius: var(--radius-sm);
-    padding: 0.5rem;
+    padding: 0.75rem;
     position: absolute;
     z-index: 1000;
     bottom: 125%;
@@ -423,7 +538,7 @@ body {
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: normal;
     line-height: 1.4;
 }
@@ -647,6 +762,64 @@ body {
     opacity: 0.9;
 }
 
+/* Features Detailed Section */
+.features-detailed {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 3rem 0;
+}
+
+.features-detailed h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-detail {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.feature-detail:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-detail i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.feature-detail h3 {
+    color: var(--darker);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.feature-detail p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
 /* Images Section */
 .images-section {
     margin-bottom: 2rem;
@@ -803,6 +976,55 @@ body {
     border-radius: 4px;
 }
 
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin: 3rem 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.faq-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
 /* Ad Container */
 .ad-container {
     margin: 1.5rem 0;
@@ -884,28 +1106,46 @@ body {
     color: var(--gray-400);
     line-height: 1.6;
     font-size: 0.9rem;
-    margin: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
 }
 
 /* روابط الفوتر */
-.footer-links {
+.footer-section ul.footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li {
+.footer-section ul.footer-links li {
     margin-bottom: 0.75rem;
 }
 
-.footer-links li span {
+.footer-section ul.footer-links li a {
     color: var(--gray-400);
     transition: color 0.3s ease;
     cursor: pointer;
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
-.footer-links li span:hover {
+.footer-section ul.footer-links li a:hover {
     color: white;
 }
 
@@ -914,6 +1154,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .format-badge {
@@ -941,6 +1182,25 @@ body {
     color: white;
 }
 
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-400);
+    font-size: 0.875rem;
+}
+
+.feature-item i {
+    color: var(--success);
+    font-size: 0.8rem;
+}
+
 /* قسم الراعي */
 .sponsor-section {
     display: flex;
@@ -950,6 +1210,7 @@ body {
 
 .sponsored-by {
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .sponsored-by span {
@@ -991,6 +1252,28 @@ body {
     font-size: 1.1rem;
 }
 
+.footer-stats-mobile {
+    display: none;
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+}
+
 /* الجزء السفلي من الفوتر */
 .footer-bottom {
     max-width: 1400px;
@@ -1018,14 +1301,14 @@ body {
     gap: 2rem;
 }
 
-.stat {
+.footer-stats .stat {
     color: var(--gray-400);
     font-size: 0.875rem;
     font-weight: 500;
     position: relative;
 }
 
-.stat:not(:last-child)::after {
+.footer-stats .stat:not(:last-child)::after {
     content: '•';
     position: absolute;
     right: -1rem;
@@ -1257,6 +1540,17 @@ body {
 }
 
 /* ===== التصميم المتجاوب ===== */
+@media (max-width: 1200px) {
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    
+    .footer-section:last-child {
+        grid-column: 1 / -1;
+        margin-top: 2rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .footer-content {
         grid-template-columns: 1fr 1fr;
@@ -1265,6 +1559,14 @@ body {
     
     .footer-section:first-child {
         grid-column: 1 / -1;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
@@ -1287,6 +1589,27 @@ body {
     
     .main-content {
         padding: 1rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .feature {
+        justify-content: center;
     }
     
     .upload-card {
@@ -1349,6 +1672,18 @@ body {
         justify-content: center;
     }
     
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1370,6 +1705,15 @@ body {
         justify-content: center;
     }
     
+    .footer-stats-mobile {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-stats {
+        display: none;
+    }
+    
     .modal-content {
         margin: 0;
         max-height: 90vh;
@@ -1386,7 +1730,7 @@ body {
     }
     
     .tooltip-text {
-        width: 150px;
+        width: 200px;
     }
 }
 
@@ -1417,6 +1761,14 @@ body {
         padding: 0.5rem;
     }
     
+    .hero-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    
     .upload-card {
         padding: 1.5rem 1rem;
     }
@@ -1425,6 +1777,14 @@ body {
     .results-card,
     .image-card {
         padding: 1rem;
+    }
+    
+    .feature-detail {
+        padding: 1.5rem 1rem;
+    }
+    
+    .faq-item {
+        padding: 1.5rem 1rem;
     }
     
     .footer-content {
@@ -1499,3 +1859,12 @@ select:focus {
 .footer-section:nth-child(2) { animation-delay: 0.2s; }
 .footer-section:nth-child(3) { animation-delay: 0.3s; }
 .footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* تحسينات للأداء */
+@media (prefers-reduced-data: reduce) {
+    .hero-section,
+    .features-detailed,
+    .faq-section {
+        background: white;
+    }
+}
