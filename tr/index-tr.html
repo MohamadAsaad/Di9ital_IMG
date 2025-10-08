@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageCompress - Ücretsiz Çevrimiçi Görsel Sıkıştırıcı | PNG, WebP, JPEG Dosya Boyutunu Küçültün</title>
+    <meta name="description"
+        content="Ücretsiz çevrimiçi görsel sıkıştırıcı. PNG, WebP, JPEG dosya boyutlarını kaliteyi koruyarak %40-80 oranında küçültün. Toplu görsel işleme, şeffaflık koruma ve ZIP indirme. Kayıt gerekmez.">
+    <meta name="keywords"
+        content="görsel sıkıştırma, görsel sıkıştırıcı, görsel boyutu küçültme, çevrimiçi görsel optimize, PNG sıkıştırıcı, WebP dönüştürücü, JPEG optimize, toplu görsel sıkıştırma, ücretsiz görsel araçları, görsel boyut küçültücü, fotoğraf sıkıştırıcı, web görsel optimize, sosyal medya görsel sıkıştırıcı">
+    <link rel="canonical" href="https://www.img.di9ital.site/tr/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="ImageCompress - Ücretsiz Çevrimiçi Görsel Sıkıştırıcı">
+    <meta property="og:description"
+        content="PNG, WebP, JPEG dosya boyutlarını kaliteyi koruyarak %80'e kadar küçültün. Anında toplu görsel sıkıştırma.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.img.di9ital.site/tr/">
+    <meta property="og:image" content="https://www.img.di9ital.site/assets/og-image.png">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ImageCompress",
+      "url": "https://www.img.di9ital.site/tr/",
+      "description": "PNG, WebP ve JPEG dosya boyutlarını kaliteyi koruyarak %80'e kadar küçülten ücretsiz çevrimiçi görsel sıkıştırma aracı",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "permissions": "browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ImageCompress",
+        "url": "https://www.img.di9ital.site/tr/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      },
+      "featureList": [
+        "PNG Sıkıştırma",
+        "WebP Dönüştürme", 
+        "JPEG Optimizasyon",
+        "Toplu İşleme",
+        "Şeffaflık Koruma",
+        "Yerel Tarayıcı İşleme"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSZip -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js"></script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6509919076268665"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-brand">
+                    <div class="logo-img">
+                        <img src="../assets/logo.png" alt="ImageCompress Logo" class="logo">
+                    </div>
+                    <div class="brand-text">
+                        <h1>ImageCompress</h1>
+                        <p class="tagline">Akıllı Görsel Sıkıştırma</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn btn-help" id="helpBtn">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="btn-text">Yardım Kılavuzu</span>
+                    </button>
+                    <div class="language-selector">
+                        <a href="../index.html" class="lang-btn">EN</a>
+                        <a href="../ar/index-ar.html" class="lang-btn">AR</a>
+                        <a href="index-tr.html" class="lang-btn active">TR</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlerleme Çubuğu -->
+            <div class="progress-bar-header hidden" id="globalProgress">
+                <div class="progress-fill"></div>
+            </div>
+        </header>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <!-- Hero Bölümü -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>PNG, WebP, JPEG Görselleri Çevrimiçi Sıkıştırın - Dosya Boyutunu %80'e Kadar Küçültün</h1>
+                    <p class="hero-description">PNG, WebP ve JPEG dosya boyutlarını kaliteyi koruyarak küçülten ücretsiz
+                        çevrimiçi görsel sıkıştırıcı. Kayıt gerekmez - görselleri tarayıcınızda yerel olarak tam
+                        gizlilikle işleyin.</p>
+
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Saniyeler içinde görsel sıkıştırma</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>%100 güvenli - sunucu yüklemesi yok</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-images"></i>
+                            <span>Toplu çoklu görsel işleme</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>Görselleriniz cihazınızı asla terk etmez</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nasıl Çalışır Bölümü -->
+            <section class="how-it-works">
+                <h2>4 Kolay Adımda Görsel Sıkıştırma</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Görselleri Yükleyin</h3>
+                        <p>PNG, WebP, JPEG dosyalarını sürükleyip bırakın veya seçin. Toplu işlemeyle aynı anda 20'ye
+                            kadar görsel destekler.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Ayarları Yapın</h3>
+                        <p>Sıkıştırma kalitesini (%10-100) seçin, maksimum genişliği belirleyin ve çıktı formatını (PNG,
+                            WebP, JPEG) seçin.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Güvenli Sıkıştırma</h3>
+                        <p>Tüm işlemler Web Workers kullanılarak tarayıcınızda yerel olarak gerçekleşir. %100 güvenli -
+                            veriler cihazınızdan ayrılmaz.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Sonuçları İndirin</h3>
+                        <p>Sıkıştırılmış görselleri tekil olarak alın veya tüm dosyaları sıkıştırma istatistikleriyle
+                            uygun bir ZIP arşivi olarak indirin.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yükleme Bölümü -->
+            <section class="upload-section">
+                <div class="upload-card" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Görselleri Buraya Sürükleyin</h2>
+                    <p>Veya dosya seçmek için tıklayın (20'ye kadar görsel - PNG, WebP, JPEG desteklenir)</p>
+                    <input type="file" id="fileInput" multiple accept="image/*,image/png,image/webp" class="hidden">
+                    <button class="btn btn-primary" id="selectFilesBtn">
+                        <i class="fas fa-folder-open"></i>
+                        <span class="btn-text">Görselleri Seç</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Kontrol Bölümü -->
+            <section class="controls-section hidden" id="controlsSection">
+                <div class="controls-card">
+                    <div class="control-header">
+                        <h3>Sıkıştırma Ayarları</h3>
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">İhtiyaçlarınız için sıkıştırma ayarlarını optimize edin</span>
+                        </div>
+                    </div>
+
+                    <div class="control-grid">
+                        <div class="control-group">
+                            <label for="quality">
+                                Sıkıştırma Kalitesi: <span id="qualityValue">80%</span>
+                            </label>
+                            <div class="slider-container">
+                                <span class="slider-label">Düşük</span>
+                                <input type="range" id="quality" min="10" max="100" value="80" class="quality-slider">
+                                <span class="slider-label">Yüksek</span>
+                            </div>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">Yüksek kalite = büyük dosya boyutu, Düşük kalite = küçük
+                                    dosya boyutu. Önerilen: %70-80 optimal denge için.</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="maxWidth">Maksimum Genişlik (piksel - isteğe bağlı)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-arrows-alt-h"></i>
+                                <input type="number" id="maxWidth" placeholder="Orijinal boyutları koru" min="100"
+                                    max="5000">
+                            </div>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">Görselleri en-boy oranını koruyarak belirtilen maksimum
+                                    genişliğe yeniden boyutlandırın. Önerilen: web kullanımı için 1200-2000px.</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="outputFormat">Çıktı Formatı</label>
+                            <select id="outputFormat">
+                                <option value="keep">Orijinal formatı koru</option>
+                                <option value="image/jpeg">JPEG (en küçük boyut, şeffaflık yok)</option>
+                                <option value="image/png">PNG (kayıpsız, şeffaflığı korur)</option>
+                                <option value="image/webp">WebP (modern format, en iyi sıkıştırma)</option>
+                            </select>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">WebP, JPEG/PNG'den %25-35 daha iyi sıkıştırma sunar. PNG
+                                    şeffaflığı korur. JPEG maksimum uyumluluk için.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-success" id="compressBtn">
+                            <i class="fas fa-compress-alt"></i>
+                            <span class="btn-text">Sıkıştırmayı Başlat</span>
+                        </button>
+                        <button class="btn btn-outline" id="resetBtn">
+                            <i class="fas fa-trash"></i>
+                            <span class="btn-text">Hepsini Temizle</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sonuçlar Bölümü -->
+            <section class="results-section hidden" id="resultsSection">
+                <div class="results-card">
+                    <div class="results-header">
+                        <h3>Sıkıştırma Sonuçları</h3>
+                        <div class="savings-badge" id="savingsBadge">
+                            <span class="savings-percent" id="savingsPercent">0%</span>
+                            <span class="savings-text">Kaydedildi</span>
+                        </div>
+                    </div>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Orijinal Boyut</span>
+                            <span class="stat-value" id="originalTotalSize">0 KB</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Sıkıştırılmış Boyut</span>
+                            <span class="stat-value" id="compressedTotalSize">0 KB</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Toplam Tasarruf</span>
+                            <span class="stat-value savings" id="totalSavings">0 KB</span>
+                        </div>
+                    </div>
+                    <p class="results-message" id="resultsMessage">
+                        <span>Görselleriniz şimdi</span>
+                        <span id="dynamicPercent">0%</span>
+                        <span>daha küçük!</span>
+                    </p>
+                    <button class="btn btn-download-all" id="downloadAllBtn">
+                        <i class="fas fa-download"></i>
+                        <span class="btn-text">Tümünü İndir (ZIP)</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Görsel Listesi Bölümü -->
+            <section class="images-section">
+                <div class="images-count hidden" id="imageCount">
+                    <span id="countText">0</span>
+                    <span>görsel seçildi</span>
+                </div>
+                <div class="images-list" id="imagesList">
+                    <!-- Görsel kartları buraya eklenecek -->
+                </div>
+            </section>
+
+            <!-- Detaylı Özellikler Bölümü -->
+            <section class="features-detailed">
+                <h2>Neden Görsel Sıkıştırıcımızı Seçmelisiniz?</h2>
+                <div class="features-grid">
+                    <div class="feature-detail">
+                        <i class="fas fa-lock"></i>
+                        <h3>Tam Gizlilik ve Güvenlik</h3>
+                        <p>Tüm görsel işlemleri HTML5 Canvas API ve Web Workers kullanılarak tarayıcınızda yerel olarak
+                            gerçekleşir. Dosyalarınız cihazınızı asla terk etmez, maksimum güvenlik ve gizlilik sağlar.
+                        </p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Yıldırım Hızında İşleme</h3>
+                        <p>Hızlı görsel sıkıştırma için modern tarayıcı teknolojilerinden yararlanın. Web Workers,
+                            kullanıcı arayüzünü engellemeden paralel işlemeye olanak tanır.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-vector-square"></i>
+                        <h3>Çoklu Format Desteği</h3>
+                        <p>PNG (alfa şeffaflığı ile), WebP (üstün sıkıştırmalı modern format) ve JPEG için tam destek.
+                            Aynı anda 20'ye kadar görseli toplu sıkıştırın.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Tam Duyarlı Tasarım</h3>
+                        <p>Tüm cihazlar için optimize edilmiş - masaüstü, tablet ve mobil. Mobil dostu arayüzümüzle
+                            görselleri her yerde, her zaman sıkıştırın.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Gelişmiş Sıkıştırma</h3>
+                        <p>Dosya boyutlarını %40-80 oranında küçülten ve görsel kaliteyi koruyan akıllı algoritmalar.
+                            Ayarlanabilir sıkıştırma seviyeleri ve yeniden boyutlandırma seçenekleri.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-download"></i>
+                        <h3>Esnek İndirme Seçenekleri</h3>
+                        <p>Sıkıştırılmış görselleri tekil olarak indirin veya tüm dosyaları ZIP arşivi olarak toplu
+                            indirin. Her görsel için tam sıkıştırma istatistikleri.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SSS Bölümü -->
+            <section class="faq-section">
+                <h2>Sıkça Sorulan Sorular</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Verilerim güvende mi?</h3>
+                        <p>Evet! Tüm görsel işlemleri tarayıcınızda yerel olarak gerçekleşir. Görselleriniz cihazınızı
+                            asla terk etmez ve herhangi bir sunucuda saklanmaz.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Hangi görsel formatları destekleniyor?</h3>
+                        <p>PNG (şeffaflık ile), WebP (modern format) ve JPEG'i destekliyoruz. Her formatı ayrı ayrı
+                            sıkıştırabilir veya aralarında dönüştürebilirsiniz.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Dosya boyutlarını ne kadar küçültebilirim?</h3>
+                        <p>Genellikle orijinal görsele ve sıkıştırma ayarlarına bağlı olarak %40-80 oranında küçültme.
+                            WebP formatı genellikle en iyi sıkıştırmayı sağlar.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Dosya boyutu sınırı var mı?</h3>
+                        <p>Görsel başına maksimum 10MB ve oturum başına 20'ye kadar görsel. Bu, hızlı işleme ve optimal
+                            performans sağlar.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Şeffaflık destekliyor musunuz?</h3>
+                        <p>Evet! PNG ve WebP formatları şeffaflık korumasını tamamen destekler. JPEG şeffaflığı
+                            desteklemez.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Bu servis gerçekten ücretsiz mi?</h3>
+                        <p>Kesinlikle! ImageCompress tamamen ücretsizdir, gizli maliyetler, kayıt gereksinimleri veya
+                            kullanım limitleri yoktur.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AdSense -->
+            <div class="ad-container">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+                    data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/logo.png" alt="ImageCompress" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3>ImageCompress</h3>
+                            <p>Ücretsiz Çevrimiçi Görsel Optimizasyonu</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Dosya boyutlarını kaliteyi koruyarak küçülten ücretsiz çevrimiçi görsel sıkıştırıcı.
+                        %100 yerel işleme - görselleriniz cihazınızı terk etmez. Kayıt gerekmez.
+                    </p>
+                    <div class="footer-links">
+                        <a href="privacy-tr.html">Gizlilik Politikası</a>
+                        <a href="compress-images-tr.html">Görsel Sıkıştırma</a>
+                        <a href="png-compressor-tr.html">PNG Sıkıştırıcı</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Sıkıştırma Araçları</h4>
+                    <ul class="footer-links">
+                        <li><a href="compress-images-tr.html">Görsel Sıkıştırıcı</a></li>
+                        <li><a href="png-compressor-tr.html">PNG Sıkıştırıcı</a></li>
+                        <li><a href="webp-converter-tr.html">WebP Dönüştürücü</a></li>
+                        <li><a href="jpeg-optimizer-tr.html">JPEG Optimize Edici</a></li>
+                        <li><a href="batch-compress-tr.html">Toplu Sıkıştırma</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Desteklenen Formatlar</h4>
+                    <div class="format-badges">
+                        <span class="format-badge png">PNG</span>
+                        <span class="format-badge webp">WebP</span>
+                        <span class="format-badge jpeg">JPEG</span>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Şeffaflık Desteği</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Toplu İşleme</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Kalite Kontrolü</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Yerel İşleme</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section sponsor-section">
+                    <div class="sponsored-by">
+                        <span>Destekleyen</span>
+                        <a href="https://www.di9ital.site/" target="_blank" rel="noopener" class="sponsor-logo">
+                            <img src="../assets/di9ital-logo.png" alt="DI9ITAL" class="sponsor-img">
+                            <span class="sponsor-name">DI9ITAL</span>
+                        </a>
+                    </div>
+                    <div class="footer-stats-mobile">
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Sıkıştırılan Görsel</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label">Mutlu Kullanıcı</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 <strong>ImageCompress</strong>. <span>Tüm hakları saklıdır</span>.</p>
+                </div>
+                <div class="footer-stats">
+                    <span class="stat">10K+ İşlenen Görsel</span>
+                    <span class="stat">5K+ Güvenen Kullanıcı</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Yardım Modal -->
+    <div class="modal hidden" id="helpModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Yardım Kılavuzu</h2>
+                <button class="close-btn" id="closeHelpBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-step">
+                    <h3><i class="fas fa-upload"></i> <span>Adım 1: Görselleri Yükleyin</span></h3>
+                    <p>Görsellerinizi sürükleyip bırakın veya dosya seçmek için tıklayın. Aynı anda 20'ye kadar görsel
+                        yükleyebilirsiniz. Desteklenen formatlar: PNG, JPEG, WebP.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-sliders-h"></i> <span>Adım 2: Ayarları Yapın</span></h3>
+                    <p>İhtiyaçlarınıza göre sıkıştırma kalitesi, maksimum genişlik ve çıktı formatını seçin. Rehberlik
+                        için ipuçlarını kullanın.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-compress-alt"></i> <span>Adım 3: Sıkıştırın</span></h3>
+                    <p>Görsellerinizi işlemek için 'Sıkıştırmayı Başlat'ı tıklayın. Sıkıştırma tarayıcınızda yerel
+                        olarak gerçekleşir - dosyalarınız bilgisayarınızı asla terk etmez.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-download"></i> <span>Adım 4: İndirin</span></h3>
+                    <p>Tekil görselleri veya tüm sıkıştırılmış dosyaları ZIP arşivi olarak indirin. Her indirme
+                        sıkıştırma istatistiklerini içerir.</p>
+                </div>
+                <div class="guide-tips">
+                    <h3>Uzman İpuçları:</h3>
+                    <ul>
+                        <li>Şeffaflık desteği ile en iyi sıkıştırma için WebP formatını kullanın</li>
+                        <li>Web kullanımı için boyutları küçültmek üzere maksimum genişlik ayarlayın (önerilen:
+                            1200-2000px)</li>
+                        <li>%70-80 kalite genellikle boyut ve kalite arasında iyi bir denge sağlar</li>
+                        <li>Tüm işlemler yerel olarak gerçekleşir - görselleriniz bilgisayarınızı asla terk etmez</li>
+                        <li>Şeffaflık korumasına ihtiyacınız olduğunda PNG formatını kullanın</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bildirim Sistemi -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script src="../js/app-tr.js"></script>
+</body>
+
+</html>

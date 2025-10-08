@@ -149,6 +149,7 @@ body {
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
+/* Language Selector with Links */
 .language-selector {
     display: flex;
     gap: 0.25rem;
@@ -156,6 +157,10 @@ body {
     padding: 0.25rem;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.language-selector a {
+    text-decoration: none;
 }
 
 .lang-btn {
@@ -169,6 +174,13 @@ body {
     transition: var(--transition);
     color: var(--gray-600);
     min-width: 40px;
+    text-align: center;
+    display: block;
+}
+
+/* For RTL (Arabic) */
+[dir="rtl"] .language-selector {
+    flex-direction: row-reverse;
 }
 
 .lang-btn.active {
@@ -179,6 +191,7 @@ body {
 
 .lang-btn:hover:not(.active) {
     background: rgba(255, 255, 255, 0.5);
+    color: var(--primary);
 }
 
 /* شريط التقدم في الهيدر */

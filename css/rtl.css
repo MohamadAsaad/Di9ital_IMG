@@ -1,0 +1,182 @@
+/* RTL Support for Arabic */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .header-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .logo-brand {
+    flex-direction: row-reverse;
+}
+.tagline {
+    text-align: center;
+}
+
+[dir="rtl"] .header-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .language-selector {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .tooltip {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+[dir="rtl"] .tooltip-text {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+[dir="rtl"] .tooltip-text::after {
+    left: auto;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -5px;
+}
+
+[dir="rtl"] .input-with-icon i {
+    left: auto;
+    right: 1rem;
+}
+
+[dir="rtl"] .input-with-icon input {
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+}
+
+[dir="rtl"] .slider-container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .action-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .image-card-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .image-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .stat-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .progress-info {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer-section h4::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .feature-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .guide-step h3 {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .guide-tips li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+}
+
+[dir="rtl"] .guide-tips li::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .modal-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .notification {
+    border-left: none;
+    border-right: 4px solid var(--primary);
+}
+
+[dir="rtl"] .notification.success {
+    border-right-color: var(--success);
+}
+
+[dir="rtl"] .notification.error {
+    border-right-color: var(--danger);
+}
+
+[dir="rtl"] .notification.warning {
+    border-right-color: var(--warning);
+}
+
+[dir="rtl"] .notification.info {
+    border-right-color: var(--primary);
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .hero-features {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .features-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .steps-grid {
+    direction: rtl;
+}
+.step {
+    text-align: center;
+}
+
+[dir="rtl"] .faq-grid {
+    direction: rtl;
+}
+
+/* [dir="rtl"] .footer-links {
+    flex-direction: row-reverse;
+} */
+
+[dir="rtl"] .format-badges {
+    direction: rtl;
+}
+
+[dir="rtl"] .feature-list {
+    direction: rtl;
+}
+
+/* RTL text alignment */
+[dir="rtl"] .hero-content,
+[dir="rtl"] .how-it-works,
+[dir="rtl"] .upload-card,
+[dir="rtl"] .controls-card,
+[dir="rtl"] .results-card,
+[dir="rtl"] .features-detailed,
+[dir="rtl"] .faq-section {
+    text-align: center;
+}
+
+[dir="rtl"] .control-group label {
+    justify-content: flex-end;
+}
+
+[dir="rtl"] .image-name {
+    text-align: right;
+}
+
+[dir="rtl"] .stat-label,
+[dir="rtl"] .stat-value {
+    text-align: right;
+}

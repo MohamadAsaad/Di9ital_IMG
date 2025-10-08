@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageCompress - ضغط الصور مجاناً | تقليل حجم ملفات PNG, WebP, JPEG</title>
+    <meta name="description"
+        content="أداة ضغط الصور المجانية عبر الإنترنت. قلل حجم ملفات PNG, WebP, JPEG بنسبة 40-80% مع الحفاظ على الجودة. معالجة جماعية للصور، الحفاظ على الشفافية والتحميل كمضغوط ZIP. لا حاجة للتسجيل.">
+    <meta name="keywords"
+        content="ضغط الصور, أداة ضغط الصور, تقليل حجم الصور, محسن الصور عبر الإنترنت, ضاغط PNG, محول WebP, محسن JPEG, ضغط الصور الدفعي, أدوات صور مجانية, مُصغّر حجم الصور, ضاغط الصور, محسن صور الويب, ضاغط صور وسائل التواصل">
+    <link rel="canonical" href="https://www.img.di9ital.site/ar/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="ImageCompress - ضغط الصور المجاني عبر الإنترنت">
+    <meta property="og:description"
+        content="قلل حجم ملفات PNG, WebP, JPEG بنسبة تصل إلى 80% مع الحفاظ على الجودة. ضغط الصور الدفعي فورياً.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.img.di9ital.site/ar/">
+    <meta property="og:image" content="https://www.img.di9ital.site/assets/og-image.png">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ImageCompress",
+      "url": "https://www.img.di9ital.site/ar/",
+      "description": "أداة ضغط الصور المجانية عبر الإنترنت التي تقلل حجم ملفات PNG, WebP, JPEG بنسبة تصل إلى 80% مع الحفاظ على الجودة",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "permissions": "browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ImageCompress",
+        "url": "https://www.img.di9ital.site/ar/"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      },
+      "featureList": [
+        "ضغط PNG",
+        "تحويل WebP", 
+        "تحسين JPEG",
+        "المعالجة الدفعية",
+        "الحفاظ على الشفافية",
+        "المعالجة المحلية في المتصفح"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSZip -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.0/dist/jszip.min.js"></script>
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6509919076268665"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- الهيدر -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-brand">
+                    <div class="logo-img">
+                        <img src="../assets/logo.png" alt="شعار ImageCompress" class="logo">
+                    </div>
+                    <div class="brand-text">
+                        <h1>ImageCompress</h1>
+                        <p class="tagline">ضغط الصور الذكي</p>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn btn-help" id="helpBtn">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="btn-text">دليل المساعدة</span>
+                    </button>
+                    <div class="language-selector">
+                        <a href="../index.html" class="lang-btn">EN</a>
+                        <a href="index-ar.html" class="lang-btn active">AR</a>
+                        <a href="../tr/index-tr.html" class="lang-btn">TR</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- شريط التقدم -->
+            <div class="progress-bar-header hidden" id="globalProgress">
+                <div class="progress-fill"></div>
+            </div>
+        </header>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- قسم البطل -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>ضغط صور PNG, WebP, JPEG عبر الإنترنت - قلل حجم الملفات حتى 80%</h1>
+                    <p class="hero-description">أداة ضغط الصور المجانية التي تقلل حجم ملفات PNG, WebP, JPEG مع الحفاظ
+                        على الجودة. لا حاجة للتسجيل - معالجة الصور محلياً في متصفحك مع خصوصية كاملة.</p>
+
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>ضغط الصور في ثوانٍ</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>آمن 100% - لا يوجد رفع للسيرفر</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-images"></i>
+                            <span>معالجة دفعية للصور المتعددة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <span>صورك لا تترك جهازك أبداً</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم كيفية العمل -->
+            <section class="how-it-works">
+                <h2>كيفية ضغط الصور في 4 خطوات سهلة</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>رفع الصور</h3>
+                        <p>اسحب وأفلت أو اختر ملفات PNG, WebP, JPEG. يدعم حتى 20 صورة في وقت واحد مع المعالجة الدفعية.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>ضبط الإعدادات</h3>
+                        <p>اختر جودة الضغط (10-100%)، حدد أقصى عرض، واختر صيغة الإخراج (PNG, WebP, JPEG).</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>الضغط الآمن</h3>
+                        <p>جميع المعالجات تحدث محلياً في متصفحك باستخدام Web Workers. آمن 100% - لا تترك البيانات جهازك.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>تحميل النتائج</h3>
+                        <p>احصل على الصور المضغوطة individually أو حمّل جميع الملفات كمحفوظة ZIP ملائمة مع إحصائيات
+                            الضغط.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم الرفع -->
+            <section class="upload-section">
+                <div class="upload-card" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>اسحب وأفلت الصور هنا</h2>
+                    <p>أو انقر لاختيار الملفات (حتى 20 صورة - مدعوم PNG, WebP, JPEG)</p>
+                    <input type="file" id="fileInput" multiple accept="image/*,image/png,image/webp" class="hidden">
+                    <button class="btn btn-primary" id="selectFilesBtn">
+                        <i class="fas fa-folder-open"></i>
+                        <span class="btn-text">اختر الصور</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- قسم التحكم -->
+            <section class="controls-section hidden" id="controlsSection">
+                <div class="controls-card">
+                    <div class="control-header">
+                        <h3>إعدادات الضغط</h3>
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">حسن إعدادات الضغط لاحتياجاتك</span>
+                        </div>
+                    </div>
+
+                    <div class="control-grid">
+                        <div class="control-group">
+                            <label for="quality">
+                                جودة الضغط: <span id="qualityValue">80%</span>
+                            </label>
+                            <div class="slider-container">
+                                <span class="slider-label">منخفضة</span>
+                                <input type="range" id="quality" min="10" max="100" value="80" class="quality-slider">
+                                <span class="slider-label">عالية</span>
+                            </div>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">جودة أعلى = حجم ملف أكبر، جودة أقل = حجم ملف أصغر. موصى به:
+                                    70-80% للتوازن الأمثل.</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="maxWidth">أقصى عرض (بكسل - اختياري)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-arrows-alt-h"></i>
+                                <input type="number" id="maxWidth" placeholder="الحفاظ على الأبعاد الأصلية" min="100"
+                                    max="5000">
+                            </div>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">غير حجم الصور إلى أقصى عرض محدد مع الحفاظ على النسبة. موصى
+                                    به: 1200-2000 بكسل للاستخدام على الويب.</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="outputFormat">صيغة الإخراج</label>
+                            <select id="outputFormat">
+                                <option value="keep">الحفاظ على الصيغة الأصلية</option>
+                                <option value="image/jpeg">JPEG (أصغر حجم، لا شفافية)</option>
+                                <option value="image/png">PNG (بدون فقدان، يحافظ على الشفافية)</option>
+                                <option value="image/webp">WebP (صيغة حديثة، أفضل ضغط)</option>
+                            </select>
+                            <div class="tooltip">
+                                <i class="fas fa-info-circle"></i>
+                                <span class="tooltip-text">WebP يوفر ضغط أفضل بنسبة 25-35% من JPEG/PNG. PNG يحافظ على
+                                    الشفافية. JPEG لأقصى توافق.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-success" id="compressBtn">
+                            <i class="fas fa-compress-alt"></i>
+                            <span class="btn-text">بدء الضغط</span>
+                        </button>
+                        <button class="btn btn-outline" id="resetBtn">
+                            <i class="fas fa-trash"></i>
+                            <span class="btn-text">مسح الكل</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم النتائج -->
+            <section class="results-section hidden" id="resultsSection">
+                <div class="results-card">
+                    <div class="results-header">
+                        <h3>نتائج الضغط</h3>
+                        <div class="savings-badge" id="savingsBadge">
+                            <span class="savings-percent" id="savingsPercent">0%</span>
+                            <span class="savings-text">محفوظ</span>
+                        </div>
+                    </div>
+                    <div class="results-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">الحجم الأصلي</span>
+                            <span class="stat-value" id="originalTotalSize">0 ك.ب</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">الحجم المضغوط</span>
+                            <span class="stat-value" id="compressedTotalSize">0 ك.ب</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">إجمالي التوفير</span>
+                            <span class="stat-value savings" id="totalSavings">0 ك.ب</span>
+                        </div>
+                    </div>
+                    <p class="results-message" id="resultsMessage">
+                        <span>صورك أصبحت الآن</span>
+                        <span id="dynamicPercent">0%</span>
+                        <span>أصغر حجماً!</span>
+                    </p>
+                    <button class="btn btn-download-all" id="downloadAllBtn">
+                        <i class="fas fa-download"></i>
+                        <span class="btn-text">تحميل الكل (ZIP)</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- قسم قائمة الصور -->
+            <section class="images-section">
+                <div class="images-count hidden" id="imageCount">
+                    <span id="countText">0</span>
+                    <span>صورة محددة</span>
+                </div>
+                <div class="images-list" id="imagesList">
+                    <!-- سيتم إضافة بطاقات الصور هنا -->
+                </div>
+            </section>
+
+            <!-- قسم الميزات التفصيلي -->
+            <section class="features-detailed">
+                <h2>لماذا تختار أداة ضغط الصور الخاصة بنا؟</h2>
+                <div class="features-grid">
+                    <div class="feature-detail">
+                        <i class="fas fa-lock"></i>
+                        <h3>خصوصية وأمان كاملان</h3>
+                        <p>جميع معالجات الصور تحدث محلياً في متصفحك باستخدام HTML5 Canvas API و Web Workers. ملفاتك لا
+                            تترك جهازك أبداً، مما يضمن أقصى درجات الأمان والخصوصية.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>معالجة سريعة كالبرق</h3>
+                        <p>الاستفادة من تقنيات المتصفح الحديثة لضغط الصور السريع. Web Workers تمكن المعالجة المتوازية
+                            دون حظر واجهة المستخدم.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-vector-square"></i>
+                        <h3>دعم متعدد للصيغ</h3>
+                        <p>دعم كامل لـ PNG (مع الشفافية)، WebP (صيغة حديثة مع ضغط متفوق)، و JPEG. ضغط دفعي حتى 20 صورة
+                            في وقت واحد.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>تصميم متجاوب بالكامل</h3>
+                        <p>مُحسّن لجميع الأجهزة - سطح المكتب، اللوحي، والجوال. اضغط الصور في أي مكان، في أي وقت مع
+                            واجهتنا الصديقة للجوال.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>ضغط متقدم</h3>
+                        <p>خوارزميات ذكية تقلل أحجام الملفات بنسبة 40-80% مع الحفاظ على الجودة البصرية. مستويات ضغط
+                            قابلة للتعديل وخيارات تغيير الحجم.</p>
+                    </div>
+                    <div class="feature-detail">
+                        <i class="fas fa-download"></i>
+                        <h3>خيارات تحميل مرنة</h3>
+                        <p>حمّل الصور المضغوطة individually أو حمّل جميع الملفات كمحفوظة ZIP. إحصائيات ضغط كاملة لكل
+                            صورة.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم الأسئلة الشائعة -->
+            <section class="faq-section">
+                <h2>الأسئلة الشائعة</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>هل بياناتي آمنة؟</h3>
+                        <p>نعم! جميع معالجات الصور تحدث محلياً في متصفحك. صورك لا تترك جهازك أبداً ولا يتم تخزينها على
+                            أي خادم.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>ما هي صيغ الصور المدعومة؟</h3>
+                        <p>ندعم PNG (مع الشفافية)، WebP (صيغة حديثة)، و JPEG. يمكنك ضغط كل صيغة individually أو التحويل
+                            بينها.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>كم يمكنني تقليل أحجام الملفات؟</h3>
+                        <p>عادةً 40-80% تخفيض اعتماداً على الصورة الأصلية وإعدادات الضغط. صيغة WebP عادة توفر أفضل ضغط.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>هل هناك حد لحجم الملف؟</h3>
+                        <p>الحد الأقصى 10 ميجابايت لكل صورة وحتى 20 صورة لكل جلسة. هذا يضمن معالجة سريعة وأداء مثالي.
+                        </p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>هل تدعمون الشفافية؟</h3>
+                        <p>نعم! صيغتي PNG و WebP تدعمان الحفاظ على الشفافية بالكامل. JPEG لا يدعم الشفافية.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>هل هذه الخدمة مجانية حقاً؟</h3>
+                        <p>بالتأكيد! ImageCompress مجاني تماماً بدون أي تكاليف مخفية، متطلبات تسجيل، أو حدود استخدام.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AdSense -->
+            <div class="ad-container">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+                    data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
+
+        <!-- الفوتر -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../assets/logo.png" alt="ImageCompress" class="footer-logo-img">
+                        <div class="footer-brand">
+                            <h3>ImageCompress</h3>
+                            <p>تحسين الصور المجاني عبر الإنترنت</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        أداة ضغط الصور المجانية التي تقلل حجم الملفات مع الحفاظ على الجودة.
+                        100% معالجة محلية - صورك لا تترك جهازك. لا حاجة للتسجيل.
+                    </p>
+                    <div class="footer-links">
+                        <a href="privacy-ar.html">سياسة الخصوصية</a>
+                        <a href="compress-images-ar.html">ضغط الصور</a>
+                        <a href="png-compressor-ar.html">ضاغط PNG</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>أدوات الضغط</h4>
+                    <ul class="footer-links">
+                        <li><a href="compress-images-ar.html">أداة ضغط الصور</a></li>
+                        <li><a href="png-compressor-ar.html">ضاغط PNG</a></li>
+                        <li><a href="webp-converter-ar.html">محول WebP</a></li>
+                        <li><a href="jpeg-optimizer-ar.html">محسن JPEG</a></li>
+                        <li><a href="batch-compress-ar.html">الضغط الدفعي</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>الصيغ المدعومة</h4>
+                    <div class="format-badges">
+                        <span class="format-badge png">PNG</span>
+                        <span class="format-badge webp">WebP</span>
+                        <span class="format-badge jpeg">JPEG</span>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>دعم الشفافية</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>المعالجة الدفعية</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>التحكم في الجودة</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>المعالجة المحلية</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section sponsor-section">
+                    <div class="sponsored-by">
+                        <span>تشغيل بواسطة</span>
+                        <a href="https://www.di9ital.site/" target="_blank" rel="noopener" class="sponsor-logo">
+                            <img src="../assets/di9ital-logo.png" alt="DI9ITAL" class="sponsor-img">
+                            <span class="sponsor-name">DI9ITAL</span>
+                        </a>
+                    </div>
+                    <div class="footer-stats-mobile">
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">صورة مضغوطة</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label">مستخدم سعيد</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 <strong>ImageCompress</strong>. <span>جميع الحقوق محفوظة</span>.</p>
+                </div>
+                <div class="footer-stats">
+                    <span class="stat">+10K صورة معالجة</span>
+                    <span class="stat">+5K مستخدم وثق بنا</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- نافذة المساعدة -->
+    <div class="modal hidden" id="helpModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>دليل المساعدة</h2>
+                <button class="close-btn" id="closeHelpBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-step">
+                    <h3><i class="fas fa-upload"></i> <span>الخطوة 1: رفع الصور</span></h3>
+                    <p>اسحب وأفلت صورك أو انقر لاختيار الملفات. يمكنك رفع حتى 20 صورة في once. الصيغ المدعومة: PNG,
+                        JPEG, WebP.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-sliders-h"></i> <span>الخطوة 2: ضبط الإعدادات</span></h3>
+                    <p>اختر جودة الضغط، أقصى عرض، وصيغة الإخراج حسب احتياجاتك. استخدم التلميحات للإرشاد.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-compress-alt"></i> <span>الخطوة 3: الضغط</span></h3>
+                    <p>انقر 'بدء الضغط' لمعالجة الصور. الضغط يحدث محلياً في متصفحك - ملفاتك لا تترك جهازك.</p>
+                </div>
+                <div class="guide-step">
+                    <h3><i class="fas fa-download"></i> <span>الخطوة 4: التحميل</span></h3>
+                    <p>حمّل الصور individually أو جميع الملفات المضغوطة كمحفوظة ZIP. كل تحميل يتضمن إحصائيات الضغط.</p>
+                </div>
+                <div class="guide-tips">
+                    <h3>نصائح احترافية:</h3>
+                    <ul>
+                        <li>استخدم صيغة WebP لأفضل ضغط مع دعم الشفافية</li>
+                        <li>اضبط أقصى عرض لتقليل الأبعاد للاستخدام على الويب (الموصى به: 1200-2000 بكسل)</li>
+                        <li>الجودة 70-80% عادة توفر توازن جيد بين الحجم والجودة</li>
+                        <li>جميع المعالجات تحدث محلياً - صورك لا تترك جهازك</li>
+                        <li>استخدم صيغة PNG عندما تحتاج للحفاظ على الشفافية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نظام الإشعارات -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script src="../js/app-ar.js"></script>
+</body>
+
+</html>
